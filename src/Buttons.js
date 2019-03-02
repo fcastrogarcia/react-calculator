@@ -5,6 +5,7 @@ class Buttons extends React.Component {
     return (
     <div className="buttons-container">
         <button id="clear" value='AC' onClick={this.props.initialize}>C</button>
+        <button id="erase" value="erase" onClick={this.props.initialize}><i class="fas fa-backspace"></i></button>
         <button id="multiply" value='*' onClick={this.props.handleOperators}>x</button>
         <button id="divide" value='/' onClick={this.props.handleOperators}>/</button>
         <button id="one" value='1' onClick={this.props.passValue}>1</button>

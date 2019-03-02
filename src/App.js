@@ -61,11 +61,25 @@ class App extends React.Component {
                this.state.formula + e.target.value
     })
   }
- initialize() {
+ initialize(e) {
+   switch(e.target.value) {
+    case "AC":
     this.setState({
         currVal: '',
         formula: '0'
     })
+    break;
+    case "erase":
+    this.setState({
+      currVal: this.state.currVal=='0' ? this.state.currVal :
+               this.state.currVal.length==1 ? '0'  :
+               this.state.currVal.slice(0,-1),
+      formula: this.state.formula=='0' ? this.state.formula :
+               this.state.formula.length==1 ? '0' :
+               this.state.formula.slice(0,-1)
+    })
+    break;
+  }
   }
 
   render () {
