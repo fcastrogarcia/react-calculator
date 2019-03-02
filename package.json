@@ -1,6 +1,6 @@
 {
   "name": "new-app",
-  "homepage": "https://fcastrogarcia.github.io/new-app",
+  "homepage": "https://fcastrogarcia.github.io/react-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
