@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
 
 
 #root {
@@ -26,8 +32,8 @@ button {
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
-    background: #0069ed;
-    color: #ffffff;
+    background: #F5FFFF;
+    color: #444445;
     font-family: 'Roboto';
     font-size: 1.2em;
     cursor: pointer;
@@ -40,13 +46,15 @@ button {
 }
 
 button:hover {
-    background: #0053ba;
+    background: #B4F2FF;
 }
 button:active {
     transform: scale(0.99);
 }
 #clear {
   grid-column: 1/2;
+  color: #FF2E47;
+
 }
 
 #equals {
@@ -59,20 +67,21 @@ button:active {
 #display-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  font-size: 2.2em;
-  background: #EDECF0;
+  font-size: 1.9em;
+  background: #F5FFFF;
   color: #444445;
   padding: .2em;
   font-family: 'Roboto';
+  border-bottom: 1px solid rgba(68,68,69,0.2);
 
 }
 .display {
   text-align: right;
   padding-right: .5em;
-  color: #9E9EA1;
+  color: rgba(68,68,69,0.4);
   overflow: auto;
 }
 #display {
   grid-row: 2/3;
-  color: #444445;
+  color: rgba(68,68,69,0.9);
 }
