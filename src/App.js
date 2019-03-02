@@ -61,7 +61,8 @@ class App extends React.Component {
   handleDecimal = (e) => {
     const numberAfterLastOperator = this.state.formula.match(/(-?\d+\.?\d*)$/);
     this.setState({
-      currVal: this.state.currVal.includes('.') ? this.state.currVal :
+      currVal: this.state.evaluated == true && !this.state.formula.includes('.') ? this.state.formula + e.target.value :
+               this.state.currVal.includes('.') ? this.state.currVal :
                numberAfterLastOperator == null ? '0.' :
                numberAfterLastOperator[0].includes('.') ? this.state.currVal :
                this.state.currVal=='' || isOperator.test(this.state.currVal) ? '0.' :
@@ -82,7 +83,8 @@ class App extends React.Component {
 
   handleErase = () => {
     this.setState({
-      currVal: this.state.currVal=='0' ? this.state.currVal :
+      currVal: isOperator.test(this.state.currVal) ? this.state.formula.slice(0,-1) :
+               this.state.currVal=='0' ? this.state.currVal :
                this.state.currVal.length==1 ? '0'  :
                this.state.currVal.slice(0,-1),
       formula: this.state.formula=='0' ? this.state.formula :
