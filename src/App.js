@@ -22,9 +22,21 @@ class App extends React.Component {
  this.handleDecimal = this.handleDecimal.bind(this);
  this.initialize = this.initialize.bind(this);
  this.handleErase = this.handleErase.bind(this);
-
+ this.handleKeyPress = this.handleErase.bind(this);
+ this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
+componentDidMount() {
+   document.addEventListener("keydown", this.handleKeyPress)
+ }
+ componentWillUnmount() {
+   document.removeEventListener("keydown", this.handleKeyPress)
+ }
+ handleKeyPress(e) {
+   if (e.key === 'Backspace') {
+     this.handleErase();
+   }
+ }
   handleInput(e) {
     this.setState({
       currVal: this.state.currVal == '0' || isOperator.test(this.state.currVal) ? e.target.value :
